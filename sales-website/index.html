@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Job-Search Toolkit — Land Your Dream Job Faster With AI</title>
+<meta name="description" content="ATS resume + cover letter templates, 100+ AI prompts, a job tracker and a LinkedIn checklist. Land your dream job faster with ChatGPT, Claude or Gemini.">
+<style>
+  :root{
+    --navy:#1F2A44; --navy2:#18213A; --accent:#2E5C8A; --accent2:#3a72ab;
+    --gold:#E0A93B; --light:#EAF1F8; --grey:#5b6472; --white:#ffffff; --ink:#222;
+    --radius:14px; --shadow:0 10px 30px rgba(31,42,68,.12);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+    color:var(--ink);line-height:1.6;background:#fff}
+  a{text-decoration:none;color:inherit}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 22px}
+  .btn{display:inline-block;padding:16px 30px;border-radius:50px;font-weight:700;font-size:1.05rem;
+    cursor:pointer;border:none;transition:transform .15s ease,box-shadow .15s ease}
+  .btn:hover{transform:translateY(-2px)}
+  .btn-gold{background:var(--gold);color:var(--navy);box-shadow:0 8px 20px rgba(224,169,59,.35)}
+  .btn-light{background:#fff;color:var(--navy);border:2px solid var(--navy)}
+  .btn-ghost{background:transparent;color:#fff;border:2px solid rgba(255,255,255,.55)}
+  /* HEADER */
+  header{position:sticky;top:0;z-index:50;background:rgba(31,42,68,.97);backdrop-filter:blur(6px)}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+  .logo{color:#fff;font-weight:800;font-size:1.15rem;letter-spacing:.3px}
+  .logo span{color:var(--gold)}
+  .nav .btn{padding:11px 22px;font-size:.95rem}
+  /* HERO */
+  .hero{background:linear-gradient(160deg,var(--navy),var(--navy2));color:#fff;padding:60px 0 70px}
+  .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:46px;align-items:center}
+  .badge{display:inline-block;background:var(--gold);color:var(--navy);font-weight:800;
+    font-size:.8rem;letter-spacing:.5px;padding:7px 16px;border-radius:50px;margin-bottom:18px}
+  .hero h1{font-size:2.85rem;line-height:1.12;margin-bottom:18px;letter-spacing:-.5px}
+  .hero h1 em{color:var(--gold);font-style:normal}
+  .hero p.sub{font-size:1.2rem;color:#c9d4e6;margin-bottom:28px;max-width:540px}
+  .hero-cta{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+  .micro{margin-top:16px;font-size:.9rem;color:#9fb0c9}
+  .hero-img{text-align:center}
+  .hero-img img{max-width:100%;border-radius:var(--radius);box-shadow:0 20px 50px rgba(0,0,0,.4)}
+  .trust{background:var(--accent);color:#fff;text-align:center;padding:13px;font-weight:600;font-size:.98rem;letter-spacing:.3px}
+  /* SECTIONS */
+  section.pad{padding:66px 0}
+  .eyebrow{color:var(--accent);font-weight:800;letter-spacing:1px;text-transform:uppercase;font-size:.82rem;text-align:center;margin-bottom:10px}
+  h2.title{text-align:center;font-size:2.1rem;color:var(--navy);margin-bottom:14px;letter-spacing:-.4px}
+  .lead{text-align:center;color:var(--grey);max-width:640px;margin:0 auto 42px;font-size:1.08rem}
+  /* PROBLEM */
+  .prob{background:var(--light)}
+  .prob-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .prob-card{background:#fff;border-radius:var(--radius);padding:26px;box-shadow:var(--shadow)}
+  .prob-card .x{color:#c0392b;font-weight:800;font-size:1.1rem}
+  .prob-card h3{margin:8px 0 6px;color:var(--navy);font-size:1.1rem}
+  .prob-card p{color:var(--grey);font-size:.97rem}
+  /* INSIDE */
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .card{border:1px solid #e6ecf4;border-radius:var(--radius);padding:26px;transition:.2s;background:#fff}
+  .card:hover{box-shadow:var(--shadow);transform:translateY(-3px)}
+  .card .ic{font-size:1.8rem}
+  .card h3{color:var(--navy);margin:10px 0 7px;font-size:1.12rem}
+  .card p{color:var(--grey);font-size:.97rem}
+  /* STEPS */
+  .steps{background:var(--navy);color:#fff}
+  .steps h2.title{color:#fff}
+  .step-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:14px}
+  .step{text-align:center}
+  .step .num{width:54px;height:54px;border-radius:50%;background:var(--gold);color:var(--navy);
+    font-weight:800;font-size:1.4rem;display:flex;align-items:center;justify-content:center;margin:0 auto 14px}
+  .step h3{margin-bottom:6px}
+  .step p{color:#c9d4e6;font-size:.97rem}
+  /* PRICE */
+  .price-box{max-width:560px;margin:0 auto;background:#fff;border:2px solid var(--accent);
+    border-radius:20px;padding:40px 34px;text-align:center;box-shadow:var(--shadow)}
+  .stack{text-align:left;max-width:380px;margin:0 auto 24px}
+  .stack li{list-style:none;padding:9px 0;border-bottom:1px dashed #e1e8f1;display:flex;justify-content:space-between;color:var(--ink)}
+  .stack li span:last-child{color:var(--grey)}
+  .price-old{color:var(--grey);text-decoration:line-through;font-size:1.3rem}
+  .price-now{color:var(--navy);font-size:3rem;font-weight:800;line-height:1}
+  .price-now small{font-size:1rem;color:var(--grey);font-weight:500}
+  .pill{display:inline-block;background:#fdecc8;color:#8a6314;font-weight:700;font-size:.85rem;padding:6px 14px;border-radius:50px;margin-bottom:14px}
+  /* LOCAL */
+  .local{background:linear-gradient(160deg,#0e5132,#0a3d26);color:#fff}
+  .local h2.title{color:#fff}.local .lead{color:#bfe6cf}
+  .local-box{max-width:620px;margin:0 auto;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);
+    border-radius:var(--radius);padding:32px;text-align:center}
+  .local-box .pay{font-size:1.05rem;margin:6px 0;color:#dff3e7}
+  .btn-wa{background:#25D366;color:#fff;margin-top:16px}
+  /* FAQ */
+  details{max-width:760px;margin:0 auto 12px;background:#fff;border:1px solid #e6ecf4;border-radius:12px;padding:6px 22px}
+  summary{cursor:pointer;font-weight:700;color:var(--navy);padding:14px 0;list-style:none;position:relative}
+  summary::after{content:'+';position:absolute;right:0;color:var(--accent);font-size:1.4rem}
+  details[open] summary::after{content:'\2212'}
+  details p{padding:0 0 16px;color:var(--grey)}
+  /* FINAL */
+  .final{background:linear-gradient(160deg,var(--accent),var(--navy));color:#fff;text-align:center}
+  .final h2{font-size:2.2rem;margin-bottom:14px}
+  .final p{color:#cdd9ea;max-width:560px;margin:0 auto 26px;font-size:1.1rem}
+  footer{background:var(--navy2);color:#8ea0bd;text-align:center;padding:30px;font-size:.9rem}
+  /* RESPONSIVE */
+  @media(max-width:860px){
+    .hero-grid,.prob-grid,.cards,.step-grid{grid-template-columns:1fr}
+    .hero h1{font-size:2.2rem}.hero-img{order:-1}
+    h2.title{font-size:1.7rem}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <div class="logo">AI <span>Job-Search</span> Toolkit</div>
+    <a class="btn btn-gold" href="PASTE_YOUR_DODO_LINK_HERE">Get It Now</a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="badge">6 FILES · 100+ AI PROMPTS · INSTANT DOWNLOAD</span>
+      <h1>Land Your Dream Job <em>Faster</em> — With AI Doing the Hard Part</h1>
+      <p class="sub">Stop staring at a blank resume. Get proven templates plus 100+ copy-paste AI prompts that turn ChatGPT, Claude or Gemini into your personal career coach.</p>
+      <div class="hero-cta">
+        <a class="btn btn-gold" href="PASTE_YOUR_DODO_LINK_HERE">Get Instant Access — $14</a>
+        <a class="btn btn-ghost" href="#whats-inside">See What's Inside</a>
+      </div>
+      <div class="micro">✓ Works with free ChatGPT, Claude &amp; Gemini &nbsp;·&nbsp; ✓ Editable in Word/Google Docs &nbsp;·&nbsp; ✓ Instant download</div>
+    </div>
+    <div class="hero-img">
+      <!-- Put COVER_main_square.png in this same folder -->
+      <img src="COVER_main_square.png" alt="AI Job-Search Toolkit cover">
+    </div>
+  </div>
+</section>
+<div class="trust">Works with &nbsp;ChatGPT&nbsp; • &nbsp;Claude&nbsp; • &nbsp;Gemini&nbsp; — all free versions</div>
+
+<!-- PROBLEM -->
+<section class="pad prob">
+  <div class="wrap">
+    <div class="eyebrow">Sound familiar?</div>
+    <h2 class="title">Job hunting is exhausting and slow</h2>
+    <div class="prob-grid">
+      <div class="prob-card"><div class="x">✕</div><h3>You apply &amp; hear nothing</h3><p>Your resume gets filtered out by the ATS bots before a human ever sees it.</p></div>
+      <div class="prob-card"><div class="x">✕</div><h3>Every application takes hours</h3><p>Rewriting the same resume and cover letter for each job drains your energy.</p></div>
+      <div class="prob-card"><div class="x">✕</div><h3>You freeze in interviews</h3><p>No idea what they'll ask or how to talk about salary without underselling yourself.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- WHATS INSIDE -->
+<section class="pad" id="whats-inside">
+  <div class="wrap">
+    <div class="eyebrow">What you get</div>
+    <h2 class="title">Everything to go from applying → offer</h2>
+    <p class="lead">Six done-for-you files. Open them, swap in your details with the AI prompts, and apply with confidence.</p>
+    <div class="cards">
+      <div class="card"><div class="ic">📄</div><h3>ATS Resume Template</h3><p>Editable in Word/Google Docs, built to pass the bots and impress recruiters — with built-in tips.</p></div>
+      <div class="card"><div class="ic">✉️</div><h3>Cover Letter Template</h3><p>A matching, modern letter you can tailor to any job in 60 seconds.</p></div>
+      <div class="card"><div class="ic">🤖</div><h3>100+ AI Prompts Guide</h3><p>Copy-paste prompts for resume, cover letters, LinkedIn, networking, interviews &amp; salary.</p></div>
+      <div class="card"><div class="ic">📊</div><h3>Job Application Tracker</h3><p>An Excel tracker with an auto dashboard that shows your pipeline and response rate.</p></div>
+      <div class="card"><div class="ic">💼</div><h3>LinkedIn Checklist</h3><p>Step-by-step to turn your profile into a recruiter magnet that shows up in search.</p></div>
+      <div class="card"><div class="ic">🚀</div><h3>Quick-Start Guide</h3><p>A simple 7-day action plan so you know exactly what to do first.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- STEPS -->
+<section class="pad steps">
+  <div class="wrap">
+    <div class="eyebrow" style="color:var(--gold)">How it works</div>
+    <h2 class="title">Three simple steps</h2>
+    <div class="step-grid">
+      <div class="step"><div class="num">1</div><h3>Open a free AI chat</h3><p>ChatGPT, Claude or Gemini — the free version works perfectly.</p></div>
+      <div class="step"><div class="num">2</div><h3>Paste a prompt</h3><p>Swap the [brackets] for your details and the target job description.</p></div>
+      <div class="step"><div class="num">3</div><h3>Apply &amp; win</h3><p>Get a tailored resume, cover letter &amp; LinkedIn in under an hour. Repeat.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICE -->
+<section class="pad">
+  <div class="wrap">
+    <div class="eyebrow">Get the toolkit</div>
+    <h2 class="title">One small price. A faster path to your next job.</h2>
+    <div class="price-box">
+      <div class="pill">★ LAUNCH PRICE — LIMITED TIME</div>
+      <ul class="stack">
+        <li><span>ATS Resume Template</span><span>$19</span></li>
+        <li><span>Cover Letter Template</span><span>$9</span></li>
+        <li><span>100+ AI Prompts Guide</span><span>$24</span></li>
+        <li><span>Job Application Tracker</span><span>$12</span></li>
+        <li><span>LinkedIn Checklist + Quick-Start</span><span>$9</span></li>
+        <li><b>Total value</b><b>$73</b></li>
+      </ul>
+      <div class="price-old">$73</div>
+      <div class="price-now">$14 <small>one-time</small></div>
+      <p style="color:var(--grey);margin:10px 0 22px">Instant download. Yours forever. Free updates.</p>
+      <a class="btn btn-gold" href="PASTE_YOUR_DODO_LINK_HERE" style="font-size:1.15rem;padding:18px 40px">Get Instant Access →</a>
+      <p style="margin-top:16px;font-size:.9rem;color:var(--grey)">🔒 Secure checkout · Pay by card, worldwide</p>
+    </div>
+  </div>
+</section>
+
+<!-- LOCAL PAKISTAN -->
+<section class="pad local">
+  <div class="wrap">
+    <div class="eyebrow" style="color:#7be0a6">In Pakistan? 🇵🇰</div>
+    <h2 class="title">Order locally with Easypaisa or JazzCash</h2>
+    <p class="lead">No international card needed. Pay in rupees and get your download link on WhatsApp within minutes.</p>
+    <div class="local-box">
+      <div class="pay"><b>Easypaisa / JazzCash:</b> PASTE_YOUR_NUMBER</div>
+      <div class="pay"><b>Account name:</b> PASTE_YOUR_NAME</div>
+      <div class="pay" style="margin-top:10px;font-size:1.4rem;color:#fff"><b>Price: Rs 1,999</b></div>
+      <a class="btn btn-wa" href="https://wa.me/92XXXXXXXXXX?text=Hi!%20I%20want%20to%20order%20the%20AI%20Job-Search%20Toolkit.">📲 Order on WhatsApp</a>
+      <p style="margin-top:14px;font-size:.9rem;color:#bfe6cf">Send payment → share the screenshot on WhatsApp → receive your files instantly.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="pad prob">
+  <div class="wrap">
+    <div class="eyebrow">Questions</div>
+    <h2 class="title">Frequently asked</h2>
+    <details open><summary>Do I need to pay for ChatGPT?</summary><p>No. The free version of ChatGPT, Claude, or Gemini works perfectly with every prompt.</p></details>
+    <details><summary>Can I edit the resume template?</summary><p>Yes — it's a Word file. Open it in Microsoft Word or upload it to Google Docs (free) and edit away.</p></details>
+    <details><summary>Is this for my industry?</summary><p>Yes. The templates and prompts work for any role and field — you customize them with your details and target job.</p></details>
+    <details><summary>How do I get the files?</summary><p>It's an instant digital download. The moment your payment is confirmed, you get access to all 6 files.</p></details>
+    <details><summary>Will this guarantee me a job?</summary><p>No tool can promise that — but this gives you recruiter-tested templates and the exact AI prompts to apply faster, smarter, and stand out. The effort is still yours; we just make it far easier.</p></details>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="pad final">
+  <div class="wrap">
+    <h2>Your next job is one good application away</h2>
+    <p>Give yourself the unfair advantage of AI + proven templates. Start today.</p>
+    <a class="btn btn-gold" href="PASTE_YOUR_DODO_LINK_HERE" style="font-size:1.15rem;padding:18px 44px">Get the Toolkit — $14</a>
+  </div>
+</section>
+
+<footer>
+  © 2026 AI Job-Search Toolkit · For personal use. Please don't resell or redistribute.<br>
+  Made with care to help you land your dream job. 🚀
+</footer>
+
+</body>
+</html>
